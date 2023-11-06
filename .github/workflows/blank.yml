@@ -11,12 +11,16 @@ on:
           - "Infrastructure/Pull"
 
 jobs:
-  - name: Checkout Repository
-    uses: actions/checkout@v2
-    with:
-      fetch-depth: 0
-  - name: Versioning
-    id: versioning
-    shell: bash
-    run: |
-      printenv
+  nughets-handler:
+      runs-on: ubuntu-latest
+      steps:
+
+        - name: Checkout Repository
+          uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+        - name: Versioning
+          id: versioning
+          shell: bash
+          run: |
+            printenv
